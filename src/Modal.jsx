@@ -4,16 +4,16 @@ const Modal = ({ isOpen, onClose, children }) => {
   
     return (
      <>
-     <div className="bg-white absolute rounded-lg shadow-lg w-full max-w-lg p-10 z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+     <div className="bg-white fixed rounded-lg w-96 shadow-lg md:w-full   p-10 z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <button onClick={onClose} className="absolute p-2 top-0  right-0 text-gray-500 hover:text-black">
-            <FaTimes size={20} /> {/* Close icon */}
+            <FaTimes size={20} /> 
           </button>
           {children}
         </div>
         
       <div
       onClick={()=>onClose()}
-      className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-10">
+      className="fixed inset-0 flex  justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-10">
     </div>
     </>
     );

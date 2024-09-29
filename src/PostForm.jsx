@@ -56,7 +56,7 @@ const PostForm = ({ addPost, updatePost, posts, closeModal }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4 ">
       {error && <p className="text-red-500">{error}</p>}
       <input
         type="text"
@@ -80,7 +80,7 @@ const PostForm = ({ addPost, updatePost, posts, closeModal }) => {
       />
       {image && <img src={image} alt="Selected" className="w-full h-32 object-cover mt-2" />}
 
-      {/* Category Dropdown */}
+    
       <select
         value={category}
         onChange={(e) => setCategory(e.target.value)}
@@ -92,7 +92,8 @@ const PostForm = ({ addPost, updatePost, posts, closeModal }) => {
         </option>
         <option value="Business">Business</option>
         <option value="Entertainment">Entertainment</option>
-        <option value="Tech">Tech</option>
+        <option value="Technology">Tech</option>
+        <option value="Sport">Sport</option>
       </select>
 
       <button

@@ -2,18 +2,18 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Home = ({ posts, filterPosts }) => {
-  const [searchQuery, setSearchQuery] = useState(''); // State to hold the search query
-  const [selectedCategory, setSelectedCategory] = useState('All'); // State to hold the selected category
+  const [searchQuery, setSearchQuery] = useState(''); 
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
-  // Create a unique list of categories from the posts
+  
   const categories = ['All', ...new Set(posts.map(post => post.category))];
 
   const filteredPosts = posts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           post.content.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
-    return matchesSearch && matchesCategory; // Only include posts that match both the search and category
-  });
+    return matchesSearch && matchesCategory; 
+     });
 
   return (
     <div className="container mx-auto md:px-10">
@@ -27,21 +27,20 @@ const Home = ({ posts, filterPosts }) => {
               const newQuery = e.target.value;
               setSearchQuery(newQuery);
               
-              // When the input is cleared, reset to the selected category
-              if (newQuery === '') {
-                filterPosts(selectedCategory); // Ensure the posts filter is based on the selected category
+             if (newQuery === '') {
+                filterPosts(selectedCategory); 
               }
-            }} // Update the search query state
+            }} 
             className="p-2 border border-gray-300 rounded-lg w-1/3"
           />
           
           <select
             id="category"
-            value={selectedCategory} // Set value to reflect the selected category
+            value={selectedCategory} 
             onChange={(e) => {
               const category = e.target.value;
-              setSelectedCategory(category); // Update selected category state
-              filterPosts(category); // Call filterPosts with the new category
+              setSelectedCategory(category); 
+              filterPosts(category); 
             }}
             className="p-1 border border-gray-300 ml-2"
           >

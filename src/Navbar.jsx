@@ -16,7 +16,12 @@ const handlePost=()=>{
           <div onClick={() => setShow(false)} className="bg-black w-full fixed z-10 h-screen bg-opacity-20 left-0 top-0"></div>
         )}
         <span className="flex flex-rows items-center w-full md:w-0 justify-between">
-          <h1 className="font-bold p-4 text-[25px]">TECHHUB</h1>
+          <h1
+           onClick={() => {
+               
+            navigate('/'); 
+          }} 
+          className="font-bold p-4 text-[25px]">TECHHUB</h1>
           <div
             className={`${
               show
